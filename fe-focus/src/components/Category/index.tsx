@@ -1,4 +1,5 @@
 import { Button, Col, Container, Row, Stack } from "react-bootstrap";
+import { buttonActiveClass } from "./definations/constant";
 import "./index.scss";
 
 export default function CategoryDeck() {
@@ -7,10 +8,18 @@ export default function CategoryDeck() {
       <Row className="justify-content-md-between gap-2">
         <Col md="auto">
           <Stack gap={2} direction="horizontal">
-            <Button variant="secondary" className="w-100">All</Button>
-            <Button className="w-100">Work</Button>
-            <Button className="w-100">Life</Button>
-            <Button className="w-100">Coding</Button>
+            <div className={`${buttonActiveClass} w-100`}>
+              <Button variant="secondary">All</Button>
+            </div>
+            <div className={`w-100`}>
+              <Button>Work</Button>
+            </div>
+            <div className={`w-100`}>
+              <Button>Life</Button>
+            </div>
+            <div className={`w-100`}>
+              <Button>Coding</Button>
+            </div>
           </Stack>
         </Col>
         <Col className="d-flex justify-content-end">
