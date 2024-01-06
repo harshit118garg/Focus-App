@@ -1,0 +1,19 @@
+import { Container, Navbar } from "react-bootstrap";
+
+export default function Navigationbar() {
+  return (
+    <>
+      <Navbar className="bg-body-tertiary rounded-2 shadow-lg">
+        <Container>
+          <Navbar.Brand href="/" className="text-uppercase fw-bolder">Ideas</Navbar.Brand>
+          <Navbar.Toggle />
+          <Navbar.Collapse className="justify-content-end">
+            <Navbar.Text>
+              Completed
+            </Navbar.Text>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
+  );
+}

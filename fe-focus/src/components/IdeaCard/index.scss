@@ -1,0 +1,25 @@
+.idea-card {
+  font-size: 1.15rem;
+  .card-header {
+    background-color: #b717b7;
+    color: #dad0d0;
+  }
+  .card-body {
+    .idea-category {
+      align-items: end;
+
+      .card-text {
+        border-radius: 0.5rem;
+        padding: 0 0.8rem;
+      }
+    }
+
+    .idea-description{
+      color: wheat;
+    }
+  }
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
