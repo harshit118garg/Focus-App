@@ -16,7 +16,7 @@ export default function FormDeck() {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Idea Category</Form.Label>
+            <Form.Label>Idea Status</Form.Label>
             <DropDown />
           </Form.Group>
           <Form.Group className="mb-3">

@@ -1,12 +1,11 @@
-import CategoryDeck from "../../components/Category";
+import StatusDeck from "../../components/Status";
 import IdeasDeck from "../../components/IdeasDeck";
-
 
 export default function HomePage() {
   return (
     <>
-        <CategoryDeck />
-        <IdeasDeck />
+      <StatusDeck />
+      <IdeasDeck />
     </>
-  )
+  );
 }

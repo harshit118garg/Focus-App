@@ -3,4 +3,10 @@
   .hstack {
     justify-content: space-between;
   }
+
+  .btn-info {
+    a {
+      all: unset;
+    }
+  }
 }

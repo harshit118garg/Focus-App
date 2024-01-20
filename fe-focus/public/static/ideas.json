@@ -1,0 +1,67 @@
+{
+  "ideas": [
+    {
+      "ideaID": 1,
+      "ideaTitle": "idea 1",
+      "ideaDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, nihil!",
+      "ideaCategory": {
+        "categoryTitle": "work",
+        "categoryColor": "blue"
+      }
+    },
+    {
+      "ideaID": 2,
+      "ideaTitle": "idea 1",
+      "ideaDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, nihil!",
+      "ideaCategory": {
+        "categoryTitle": "work",
+        "categoryColor": "blue"
+      }
+    },
+    {
+      "ideaID": 3,
+      "ideaTitle": "idea 1",
+      "ideaDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, nihil!",
+      "ideaCategory": {
+        "categoryTitle": "work",
+        "categoryColor": "blue"
+      }
+    },
+    {
+      "ideaID": 4,
+      "ideaTitle": "idea 1",
+      "ideaDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, nihil!",
+      "ideaCategory": {
+        "categoryTitle": "work",
+        "categoryColor": "blue"
+      }
+    },
+    {
+      "ideaID": 5,
+      "ideaTitle": "idea 1",
+      "ideaDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, nihil!",
+      "ideaCategory": {
+        "categoryTitle": "work",
+        "categoryColor": "blue"
+      }
+    },
+    {
+      "ideaID": 6,
+      "ideaTitle": "idea 1",
+      "ideaDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, nihil!",
+      "ideaCategory": {
+        "categoryTitle": "work",
+        "categoryColor": "blue"
+      }
+    },
+    {
+      "ideaID": 7,
+      "ideaTitle": "idea 1",
+      "ideaDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, nihil!",
+      "ideaCategory": {
+        "categoryTitle": "work",
+        "categoryColor": "blue"
+      }
+    }
+  ]
+}

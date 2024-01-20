@@ -14,12 +14,18 @@
       }
     }
 
-    .idea-description{
+    .idea-description {
       color: wheat;
     }
   }
   .card-footer {
     display: flex;
     justify-content: space-between;
+
+    .btn-success {
+      a {
+        all: unset;
+      }
+    }
   }
 }

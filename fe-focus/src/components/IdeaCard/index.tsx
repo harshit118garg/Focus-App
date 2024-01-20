@@ -1,16 +1,19 @@
-import { FileSignature, Trash } from "lucide-react";
+import { FileSignature, Trash, Check } from "lucide-react";
 import { Button, Card, Stack } from "react-bootstrap";
 import "./index.scss";
 import { Properties } from "./definations/types";
+import { Link } from "react-router-dom";
 
-export default function IdeaCard({num}: Properties) {
+export default function IdeaCard({ num }: Properties) {
   return (
     <>
       <Card className="idea-card">
         <Card.Header>{`Card Title ${num}`}</Card.Header>
         <Card.Body>
           <Stack className="idea-category">
-            <Card.Text style={{background: 'black'}}>{"Card Category"}</Card.Text>
+            <Card.Text style={{ background: "black" }}>
+              {"Card Category"}
+            </Card.Text>
           </Stack>
           <Card.Text className="idea-description">
             {
@@ -20,7 +23,12 @@ export default function IdeaCard({num}: Properties) {
         </Card.Body>
         <Card.Footer>
           <Button variant="success">
-            <FileSignature />
+            <Link to={`update/${num}`}>
+              <FileSignature />
+            </Link>
+          </Button>
+          <Button variant="primary">
+            <Check />
           </Button>
           <Button variant="danger">
             <Trash />

@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/executed" element={<Completed />} />
           <Route path="/addnew" element={<AddNew />} />
-          <Route path="/update" element={<UpdateIdea />} />
+          <Route path="/update/:id" element={<UpdateIdea />} />
         </Routes>
       </div>
     </>
