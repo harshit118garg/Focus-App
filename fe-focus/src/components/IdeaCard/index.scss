@@ -22,7 +22,8 @@
     display: flex;
     justify-content: space-between;
 
-    .btn-success {
+    .btn-success,
+    .btn-warning {
       a {
         all: unset;
       }

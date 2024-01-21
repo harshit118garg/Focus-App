@@ -4,26 +4,20 @@ import "./index.scss";
 import { Properties } from "./definations/types";
 import { Link } from "react-router-dom";
 
-export default function IdeaCard({ num }: Properties) {
+export default function IdeaCard({ idea }: Properties) {
   return (
     <>
       <Card className="idea-card">
-        <Card.Header>{`Card Title ${num}`}</Card.Header>
+        <Card.Header>{`${idea.title} ${idea.id}`}</Card.Header>
         <Card.Body>
           <Stack className="idea-category">
-            <Card.Text style={{ background: "black" }}>
-              {"Card Category"}
-            </Card.Text>
+            <Card.Text style={{ background: "black" }}>{idea.status}</Card.Text>
           </Stack>
-          <Card.Text className="idea-description">
-            {
-              "Some quick example text to build on the card title and make up the bulk of the card's content"
-            }
-          </Card.Text>
+          <Card.Text className="idea-description">{idea.description}</Card.Text>
         </Card.Body>
         <Card.Footer>
-          <Button variant="success">
-            <Link to={`update/${num}`}>
+          <Button variant="warning">
+            <Link to={`update/${idea.id}`}>
               <FileSignature />
             </Link>
           </Button>

@@ -63,5 +63,55 @@
         "categoryColor": "blue"
       }
     }
+  ],
+  "IdeasNew": [
+    {
+      "id": 1,
+      "title": "Idea 1",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
+      "status": "In Progress"
+    },
+    {
+      "id": 2,
+      "title": "Idea 2",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
+      "status": "Not Started"
+    },
+    {
+      "id": 3,
+      "title": "Idea 3",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
+      "status": "Implemented"
+    },
+    {
+      "id": 4,
+      "title": "Idea 4",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
+      "status": "Discarded"
+    },
+    {
+      "id": 5,
+      "title": "Idea 5",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
+      "status": "Implemented"
+    },
+    {
+      "id": 6,
+      "title": "Idea 6",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
+      "status": "Discarded"
+    },
+    {
+      "id": 7,
+      "title": "Idea 7",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
+      "status": "In Progress"
+    },
+    {
+      "id": 8,
+      "title": "Idea 8",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
+      "status": "Not Started"
+    }
   ]
 }

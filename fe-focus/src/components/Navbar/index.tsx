@@ -1,5 +1,4 @@
-import { CheckSquare } from "lucide-react";
-import { Badge, Container, Navbar } from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
 
 export default function Navigationbar() {
   return (
@@ -10,7 +9,7 @@ export default function Navigationbar() {
             Ideas
           </Navbar.Brand>
           <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-end">
+          {/* <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
               <Badge
                 bg="success"
@@ -22,7 +21,7 @@ export default function Navigationbar() {
                 <CheckSquare />
               </Badge>
             </Navbar.Text>
-          </Navbar.Collapse>
+          </Navbar.Collapse> */}
         </Container>
       </Navbar>
     </>

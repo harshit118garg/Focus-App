@@ -4,7 +4,9 @@ import { State } from "./definations/types";
 import { Idea } from "../global/definations/types";
 
 const initialState: State = {
-  ideasResponse: [],
+  ideasResponse: {
+    ideasData: [],
+  },
   loading: false,
   error: false,
 };
@@ -17,6 +19,7 @@ export const FetchIdeasAsync = createAsyncThunk(
       const { data } = await fetchIdeas();
       return data;
     } catch (error: any) {
+      console.log(`❌: Error in Async Thunk for fetching ideas`);
       return rejectWithValue(error.response.data);
     }
   }
@@ -33,9 +36,9 @@ export const IdeasSlice = createSlice({
       })
       .addCase(
         FetchIdeasAsync.fulfilled,
-        (state, action: PayloadAction<Idea>) => {
+        (state, action: PayloadAction<Idea[]>) => {
           state.loading = false;
-          state.ideasResponse = [...state.ideasResponse, action.payload];
+          state.ideasResponse.ideasData = action.payload;
           state.error = false;
         }
       )
@@ -46,4 +49,4 @@ export const IdeasSlice = createSlice({
 });
 
 export const { actions } = IdeasSlice;
-export default IdeasSlice.reducer
+export default IdeasSlice.reducer;

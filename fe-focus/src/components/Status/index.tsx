@@ -1,22 +1,35 @@
 import { Button, Col, Container, Row, Stack } from "react-bootstrap";
-import { buttonActiveClass } from "./definations/constant";
-import "./index.scss";
 import { Link } from "react-router-dom";
-import { statuses } from "../../global/definations/constants";
+import { buttonActiveClass, statusButtons } from "./definations/constant";
+import "./index.scss";
+import { useState } from "react";
 
 export default function StatusDeck() {
+  const [statusActive, setStatusActive] = useState(0);
+
+  const handleStatus = (id: number) => {
+    setStatusActive(id);
+  };
+
   return (
     <Container fluid id="categoryDeck">
       <Row className="justify-content-md-between gap-2">
         <Col md="auto">
           <Stack gap={2} direction="horizontal">
-            <div className={`w-100 ${buttonActiveClass}`}>
-              <Button variant="secondary">All</Button>
-            </div>
-            {statuses.map((status, index) => {
+            {statusButtons.map((button, index) => {
               return (
-                <div key={index} className={`w-100`}>
-                  <Button>{status.value}</Button>
+                <div
+                  key={index}
+                  className={
+                    index === statusActive ? `${buttonActiveClass}` : ""
+                  }
+                >
+                  <Button
+                    variant={button.variant}
+                    onClick={() => handleStatus(index)}
+                  >
+                    {button.value}
+                  </Button>
                 </div>
               );
             })}
