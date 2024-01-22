@@ -1,5 +1,5 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchIdeas } from "./api";
+import { addNewIdea, fetchIdeas } from "./api";
 import { State } from "./definations/types";
 import { Idea } from "../global/definations/types";
 
@@ -9,6 +9,7 @@ const initialState: State = {
   },
   loading: false,
   error: false,
+  filteredStatus: "All",
 };
 
 export const FetchIdeasAsync = createAsyncThunk(
@@ -25,10 +26,28 @@ export const FetchIdeasAsync = createAsyncThunk(
   }
 );
 
+export const AddNewIdeaAsync = createAsyncThunk(
+  "add/idea",
+  async (idaa: Idea, { rejectWithValue }) => {
+    try {
+      console.log(`🚀: Async Thunk for addinf new idea`);
+      const { data } = await addNewIdea(idaa);
+      return data;
+    } catch (error: any) {
+      console.log(`❌: Error in Async Thunk for adding new idea`);
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
 export const IdeasSlice = createSlice({
   name: "ideas",
   initialState,
-  reducers: {},
+  reducers: {
+    setFilteredStatus: (state, action: PayloadAction<string>) => {
+      state.filteredStatus = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(FetchIdeasAsync.pending, (state) => {
@@ -44,6 +63,17 @@ export const IdeasSlice = createSlice({
       )
       .addCase(FetchIdeasAsync.rejected, (state) => {
         state.error = true;
+      })
+      .addCase(AddNewIdeaAsync.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(AddNewIdeaAsync.fulfilled, (state, action) => {
+        state.loading = false;
+        state.ideasResponse = action.payload;
+        state.error = false;
+      })
+      .addCase(AddNewIdeaAsync.rejected, (state) => {
+        state.error = false;
       });
   },
 });

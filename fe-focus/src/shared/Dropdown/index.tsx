@@ -2,6 +2,7 @@ import { useState } from "react";
 import Select from "react-select";
 import { Status } from "../../global/definations/types";
 import { statuses } from "../../global/definations/constants";
+import React from "react";
 
 export default function DropDown() {
   const OptionWithDeleteButton: React.FC<{
@@ -21,7 +22,7 @@ export default function DropDown() {
   const handleSelect = (status: Status | null) => setSelectedStatus(status);
 
   return (
-    <>
+    <React.Fragment>
       <Select
         options={statuses}
         onChange={handleSelect}
@@ -30,17 +31,6 @@ export default function DropDown() {
           Option: OptionWithDeleteButton,
         }}
       />
-      {/* <CreatableSelect
-        options={optionsList}
-        isClearable
-        isSearchable
-        value={dropdownValue}
-        onChange={handleChange}
-        onCreateOption={handleCreateOption}
-        components={{
-          Option: OptionWithDeleteButton,
-        }}
-      /> */}
-    </>
+    </React.Fragment>
   );
 }

@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 import { buttonActiveClass, statusButtons } from "./definations/constant";
 import "./index.scss";
 import { useState } from "react";
+import { Properties } from "./definations/types";
 
-export default function StatusDeck() {
+export default function StatusDeck({ filterIdeas }: Properties) {
   const [statusActive, setStatusActive] = useState(0);
 
-  const handleStatus = (id: number) => {
-    setStatusActive(id);
-  };
+  const handleStatus = (id: number) => setStatusActive(id);
 
   return (
     <Container fluid id="categoryDeck">
@@ -26,7 +25,10 @@ export default function StatusDeck() {
                 >
                   <Button
                     variant={button.variant}
-                    onClick={() => handleStatus(index)}
+                    onClick={() => {
+                      handleStatus(index);
+                      filterIdeas(button.value);
+                    }}
                   >
                     {button.value}
                   </Button>

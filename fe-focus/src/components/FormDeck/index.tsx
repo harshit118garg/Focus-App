@@ -1,8 +1,9 @@
 import { Button, Container, Form } from "react-bootstrap";
 import "./styles.scss";
 import DropDown from "../../shared/Dropdown";
+import { Properties } from "./definations/types";
 
-export default function FormDeck() {
+export default function FormDeck({ ideaProp, manageIdea }: Properties) {
   return (
     <>
       <Container fluid id="formDeck">
@@ -12,6 +13,7 @@ export default function FormDeck() {
             <Form.Control
               className="text-bg-light"
               type="text"
+              value={ideaProp.title}
               placeholder="Your Idea"
             />
           </Form.Group>
@@ -26,6 +28,7 @@ export default function FormDeck() {
               placeholder="Idea Description"
               as="textarea"
               rows={3}
+              value={ideaProp.description}
             />
           </Form.Group>
           <Button>Add Your Idea</Button>

@@ -4,6 +4,7 @@ export interface State {
   ideasResponse: ApiData;
   loading: boolean;
   error: boolean;
+  filteredStatus: string;
 }
 
 export interface ApiData {

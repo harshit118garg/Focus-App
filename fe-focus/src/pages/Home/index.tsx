@@ -3,19 +3,24 @@ import IdeasDeck from "../../components/IdeasDeck";
 import StatusDeck from "../../components/Status";
 import { AppDispatch, RootState } from "../../redux/store";
 import { useEffect } from "react";
-import { FetchIdeasAsync } from "../../redux/slice";
+import { FetchIdeasAsync, actions } from "../../redux/slice";
 
 export default function HomePage() {
+  const dispatch = useDispatch<AppDispatch>();
   const isLoading = useSelector((state: RootState) => state.getIdeas.loading);
   const allIdeas = useSelector(
     (state: RootState) => state.getIdeas.ideasResponse.ideasData
   );
 
-  const dispatch = useDispatch<AppDispatch>();
+  const fetchIdeas = () => dispatch(FetchIdeasAsync());
+
+  const filterIdeas = (filterType: string) => {
+    dispatch(actions.setFilteredStatus(filterType));
+  };
 
   useEffect(() => {
     if (!allIdeas.length && !isLoading) {
-      dispatch(FetchIdeasAsync());
+      fetchIdeas();
     }
   }, [dispatch, allIdeas, isLoading]);
 
@@ -23,7 +28,7 @@ export default function HomePage() {
 
   return (
     <>
-      <StatusDeck />
+      <StatusDeck filterIdeas={filterIdeas} />
       <IdeasDeck ideas={allIdeas} />
     </>
   );
