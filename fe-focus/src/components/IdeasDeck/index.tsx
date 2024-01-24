@@ -9,9 +9,9 @@ export default function IdeasDeck({ ideas }: Properties) {
   const { filteredStatus } = useSelector((state: RootState) => state.getIdeas);
 
   const filteredIdeas =
-    filteredStatus === "All"
+    filteredStatus?.value === "All"
       ? ideas
-      : ideas?.filter((idea) => idea.status === filteredStatus);
+      : ideas?.filter((idea) => idea.status?.value === filteredStatus?.value);
 
   return (
     <>

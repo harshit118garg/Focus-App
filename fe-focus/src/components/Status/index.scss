@@ -2,6 +2,14 @@
   margin: 2rem 0;
   .hstack {
     justify-content: space-between;
+
+    @media screen and (max-width: 580px) {
+      flex-direction: column;
+      > div,
+      button {
+        width: 100%;
+      }
+    }
   }
 
   .btn-info {

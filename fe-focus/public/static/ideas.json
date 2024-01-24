@@ -69,49 +69,81 @@
       "id": 1,
       "title": "Idea 1",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
-      "status": "In Progress"
+      "status": {
+        "label": "In Progress",
+        "value": "In Progress",
+        "variant": "info"
+      }
     },
     {
       "id": 2,
       "title": "Idea 2",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
-      "status": "Not Started"
+      "status": {
+        "label": "Not Started",
+        "value": "Not Started",
+        "variant": "secondary"
+      }
     },
     {
       "id": 3,
       "title": "Idea 3",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
-      "status": "Implemented"
+      "status": {
+        "label": "Implemented",
+        "value": "Implemented",
+        "variant": "success"
+      }
     },
     {
       "id": 4,
       "title": "Idea 4",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
-      "status": "Discarded"
+      "status": {
+        "label": "Discarded",
+        "value": "Discarded",
+        "variant": "danger"
+      }
     },
     {
       "id": 5,
       "title": "Idea 5",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
-      "status": "Implemented"
+      "status": {
+        "label": "Implemented",
+        "value": "Implemented",
+        "variant": "success"
+      }
     },
     {
       "id": 6,
       "title": "Idea 6",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
-      "status": "Discarded"
+      "status": {
+        "label": "Discarded",
+        "value": "Discarded",
+        "variant": "danger"
+      }
     },
     {
       "id": 7,
       "title": "Idea 7",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
-      "status": "In Progress"
+      "status": {
+        "label": "In Progress",
+        "value": "In Progress",
+        "variant": "info"
+      }
     },
     {
       "id": 8,
       "title": "Idea 8",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
-      "status": "Not Started"
+      "status": {
+        "label": "Not Started",
+        "value": "Not Started",
+        "variant": "secondary"
+      }
     }
   ]
 }

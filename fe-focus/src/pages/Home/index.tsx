@@ -4,6 +4,7 @@ import StatusDeck from "../../components/Status";
 import { AppDispatch, RootState } from "../../redux/store";
 import { useEffect } from "react";
 import { FetchIdeasAsync, actions } from "../../redux/slice";
+import { Status } from "../../global/definations/types";
 
 export default function HomePage() {
   const dispatch = useDispatch<AppDispatch>();
@@ -14,7 +15,7 @@ export default function HomePage() {
 
   const fetchIdeas = () => dispatch(FetchIdeasAsync());
 
-  const filterIdeas = (filterType: string) => {
+  const filterIdeas = (filterType: Status) => {
     dispatch(actions.setFilteredStatus(filterType));
   };
 

@@ -1,3 +1,5 @@
+import { Status } from "../../../global/definations/types";
+
 export interface Properties {
-  filterIdeas: (filterType: string) => void;
+  filterIdeas: (filterType: Status) => void;
 }

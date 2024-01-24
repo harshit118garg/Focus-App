@@ -13,7 +13,9 @@ export default function FormDeck({ ideaProp, manageIdea }: Properties) {
             <Form.Control
               className="text-bg-light"
               type="text"
+              name="title"
               value={ideaProp.title}
+              onChange={manageIdea}
               placeholder="Your Idea"
             />
           </Form.Group>
@@ -26,9 +28,11 @@ export default function FormDeck({ ideaProp, manageIdea }: Properties) {
             <Form.Control
               className="text-bg-light"
               placeholder="Idea Description"
+              name="description"
               as="textarea"
               rows={3}
               value={ideaProp.description}
+              onChange={manageIdea}
             />
           </Form.Group>
           <Button>Add Your Idea</Button>

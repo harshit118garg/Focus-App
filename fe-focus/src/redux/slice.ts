@@ -1,7 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { addNewIdea, fetchIdeas } from "./api";
 import { State } from "./definations/types";
-import { Idea } from "../global/definations/types";
+import { Idea, Status } from "../global/definations/types";
 
 const initialState: State = {
   ideasResponse: {
@@ -9,7 +9,8 @@ const initialState: State = {
   },
   loading: false,
   error: false,
-  filteredStatus: "All",
+  filteredStatus: { label: "All", value: "All", variant: "primary" },
+  selectedStatus: null,
 };
 
 export const FetchIdeasAsync = createAsyncThunk(
@@ -44,8 +45,11 @@ export const IdeasSlice = createSlice({
   name: "ideas",
   initialState,
   reducers: {
-    setFilteredStatus: (state, action: PayloadAction<string>) => {
+    setFilteredStatus: (state, action: PayloadAction<Status>) => {
       state.filteredStatus = action.payload;
+    },
+    setSelectedStatus: (state, action: PayloadAction<Status>) => {
+      state.selectedStatus = action.payload;
     },
   },
   extraReducers: (builder) => {

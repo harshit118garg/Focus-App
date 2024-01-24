@@ -1,10 +1,15 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Select from "react-select";
-import { Status } from "../../global/definations/types";
+import React, { useState } from "react";
 import { statuses } from "../../global/definations/constants";
-import React from "react";
+import { Status } from "../../global/definations/types";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../redux/store";
+import { actions } from "../../redux/slice";
 
 export default function DropDown() {
+  const dispatch = useDispatch<AppDispatch>();
+
   const OptionWithDeleteButton: React.FC<{
     innerProps: any;
     label: string;
@@ -19,7 +24,12 @@ export default function DropDown() {
   );
 
   const [selectedStatus, setSelectedStatus] = useState<Status | null>(null);
-  const handleSelect = (status: Status | null) => setSelectedStatus(status);
+  const handleSelect = (status: Status | null) => {
+    if (status !== null) {
+      setSelectedStatus(status);
+      dispatch(actions.setSelectedStatus(status));
+    }
+  };
 
   return (
     <React.Fragment>

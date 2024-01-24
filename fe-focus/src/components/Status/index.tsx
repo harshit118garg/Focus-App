@@ -27,7 +27,7 @@ export default function StatusDeck({ filterIdeas }: Properties) {
                     variant={button.variant}
                     onClick={() => {
                       handleStatus(index);
-                      filterIdeas(button.value);
+                      filterIdeas(button);
                     }}
                   >
                     {button.value}

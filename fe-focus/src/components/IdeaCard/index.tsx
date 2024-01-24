@@ -3,7 +3,6 @@ import { Button, Card, Stack } from "react-bootstrap";
 import "./index.scss";
 import { Properties } from "./definations/types";
 import { Link } from "react-router-dom";
-import { StatusColor } from "../../utils/statusColor";
 
 export default function IdeaCard({ idea }: Properties) {
   return (
@@ -11,11 +10,13 @@ export default function IdeaCard({ idea }: Properties) {
       <Card className="idea-card">
         <Card.Header>{`${idea.title} ${idea.id}`}</Card.Header>
         <Card.Body>
-          <Stack className="idea-category">
-            <Card.Text className={`bg-${StatusColor(idea.status)} text-white`}>
-              {idea.status}
-            </Card.Text>
-          </Stack>
+          {idea.status && (
+            <Stack className="idea-category">
+              <Card.Text className={`bg-${idea.status.variant} text-white`}>
+                {idea.status.value}
+              </Card.Text>
+            </Stack>
+          )}
           <Card.Text className="idea-description">{idea.description}</Card.Text>
         </Card.Body>
         <Card.Footer>
