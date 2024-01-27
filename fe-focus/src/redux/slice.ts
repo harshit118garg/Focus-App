@@ -11,6 +11,7 @@ const initialState: State = {
   error: false,
   filteredStatus: { label: "All", value: "All", variant: "primary" },
   selectedStatus: null,
+  newIdea: null,
 };
 
 export const FetchIdeasAsync = createAsyncThunk(
@@ -29,10 +30,11 @@ export const FetchIdeasAsync = createAsyncThunk(
 
 export const AddNewIdeaAsync = createAsyncThunk(
   "add/idea",
-  async (idaa: Idea, { rejectWithValue }) => {
+  async (idea: Idea, { rejectWithValue }) => {
     try {
-      console.log(`🚀: Async Thunk for addinf new idea`);
-      const { data } = await addNewIdea(idaa);
+      console.log(`🚀: Async Thunk for adding new idea`);
+      await addNewIdea(idea);
+      const { data } = await fetchIdeas();
       return data;
     } catch (error: any) {
       console.log(`❌: Error in Async Thunk for adding new idea`);
@@ -50,6 +52,9 @@ export const IdeasSlice = createSlice({
     },
     setSelectedStatus: (state, action: PayloadAction<Status>) => {
       state.selectedStatus = action.payload;
+    },
+    setNewIdea: (state, action: PayloadAction<Idea>) => {
+      state.newIdea = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -73,7 +78,7 @@ export const IdeasSlice = createSlice({
       })
       .addCase(AddNewIdeaAsync.fulfilled, (state, action) => {
         state.loading = false;
-        state.ideasResponse = action.payload;
+        state.ideasResponse.ideasData = action.payload;
         state.error = false;
       })
       .addCase(AddNewIdeaAsync.rejected, (state) => {

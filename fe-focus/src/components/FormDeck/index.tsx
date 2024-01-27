@@ -3,7 +3,11 @@ import "./styles.scss";
 import DropDown from "../../shared/Dropdown";
 import { Properties } from "./definations/types";
 
-export default function FormDeck({ ideaProp, manageIdea }: Properties) {
+export default function FormDeck({
+  ideaProp,
+  manageIdea,
+  clickHandler,
+}: Properties) {
   return (
     <>
       <Container fluid id="formDeck">
@@ -35,7 +39,7 @@ export default function FormDeck({ ideaProp, manageIdea }: Properties) {
               onChange={manageIdea}
             />
           </Form.Group>
-          <Button>Add Your Idea</Button>
+          <Button onClick={clickHandler}>Add Your Idea</Button>
         </Form>
       </Container>
     </>

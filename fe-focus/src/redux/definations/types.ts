@@ -6,6 +6,7 @@ export interface State {
   error: boolean;
   filteredStatus: Status | null;
   selectedStatus: Status | null;
+  newIdea: Idea | null;
 }
 
 export interface ApiData {
