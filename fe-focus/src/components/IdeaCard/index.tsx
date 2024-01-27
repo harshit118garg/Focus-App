@@ -8,7 +8,7 @@ export default function IdeaCard({ idea }: Properties) {
   return (
     <>
       <Card className="idea-card">
-        <Card.Header>{`${idea.title} ${idea.id}`}</Card.Header>
+        <Card.Header>{`${idea.title}`}</Card.Header>
         <Card.Body>
           {idea.status && (
             <Stack className="idea-category">
