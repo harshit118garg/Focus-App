@@ -4,7 +4,7 @@ import "./index.scss";
 import { Properties } from "./definations/types";
 import { Link } from "react-router-dom";
 
-export default function IdeaCard({ idea }: Properties) {
+export default function IdeaCard({ idea, deleteHandler }: Properties) {
   return (
     <>
       <Card className="idea-card">
@@ -28,7 +28,7 @@ export default function IdeaCard({ idea }: Properties) {
           <Button variant="primary">
             <Check />
           </Button>
-          <Button variant="danger">
+          <Button variant="danger" onClick={() => deleteHandler(idea)}>
             <Trash />
           </Button>
         </Card.Footer>

@@ -4,8 +4,8 @@ import StatusDeck from "../../components/Status";
 import { AppDispatch, RootState } from "../../redux/store";
 import { useEffect } from "react";
 import { actions } from "../../redux/slice";
-import { Status } from "../../global/definations/types";
-import { FetchIdeasAsync } from "../../redux/api/controllers";
+import { Idea, Status } from "../../global/definations/types";
+import { DeleteIdeaAsync, FetchIdeasAsync } from "../../redux/api/controllers";
 
 export default function HomePage() {
   const dispatch = useDispatch<AppDispatch>();
@@ -26,12 +26,22 @@ export default function HomePage() {
     }
   }, [dispatch, allIdeas, isLoading]);
 
+  const handleDelete = (idea: Idea) => {
+    console.log("idea to be deleted", idea);
+    const confirmation = confirm(
+      "are you sure you want to move this idea to discared....?"
+    );
+    if (confirmation) {
+      dispatch(DeleteIdeaAsync(idea));
+    }
+  };
+
   if (isLoading) return <h2>Loading.....</h2>;
 
   return (
     <>
       <StatusDeck filterIdeas={filterIdeas} />
-      <IdeasDeck ideas={allIdeas} />
+      <IdeasDeck ideas={allIdeas} handleDelete={handleDelete} />
     </>
   );
 }

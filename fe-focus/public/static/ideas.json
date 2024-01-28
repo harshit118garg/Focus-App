@@ -76,16 +76,6 @@
       }
     },
     {
-      "id": 2,
-      "title": "Idea 2",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
-      "status": {
-        "label": "Not Started",
-        "value": "Not Started",
-        "variant": "secondary"
-      }
-    },
-    {
       "id": 3,
       "title": "Idea 3",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.",
@@ -144,36 +134,6 @@
         "value": "Not Started",
         "variant": "secondary"
       }
-    },
-    {
-      "title": "test-1",
-      "description": "test-des",
-      "status": {
-        "label": "Implemented",
-        "value": "Implemented",
-        "variant": "success"
-      },
-      "id": 1706371518674
-    },
-    {
-      "title": "test-title",
-      "description": "test-desc",
-      "status": {
-        "label": "Implemented",
-        "value": "Implemented",
-        "variant": "success"
-      },
-      "id": 1706371693747
-    },
-    {
-      "title": "new idea",
-      "description": "test new idea, not started yetr, needs to bew owroked on",
-      "status": {
-        "label": "Not Started",
-        "value": "Not Started",
-        "variant": "secondary"
-      },
-      "id": 1706424531713
     }
   ]
 }

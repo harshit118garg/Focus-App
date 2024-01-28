@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { updateIdea, fetchIdeas, addNewIdea } from ".";
+import { addNewIdea, deleteIdea, fetchIdeas, updateIdea } from ".";
 import { Idea } from "../../global/definations/types";
 
 const FetchIdeasAsync = createAsyncThunk(
@@ -46,4 +46,19 @@ const UpdateIdeaAsync = createAsyncThunk(
   }
 );
 
-export { FetchIdeasAsync, AddNewIdeaAsync, UpdateIdeaAsync };
+const DeleteIdeaAsync = createAsyncThunk(
+  "delete/idea",
+  async (idea: Idea, { rejectWithValue }) => {
+    try {
+      console.log(`🚀: Async Thunk for deleting idea`);
+      await deleteIdea(idea);
+      const { data } = await fetchIdeas();
+      return data;
+    } catch (error: any) {
+      console.log(`❌: Error in Async Thunk for deleting idea`);
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export { AddNewIdeaAsync, DeleteIdeaAsync, FetchIdeasAsync, UpdateIdeaAsync };

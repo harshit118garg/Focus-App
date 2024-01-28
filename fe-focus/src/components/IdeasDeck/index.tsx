@@ -5,7 +5,7 @@ import { Properties } from "./definations/types";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 
-export default function IdeasDeck({ ideas }: Properties) {
+export default function IdeasDeck({ ideas, handleDelete }: Properties) {
   const { filteredStatus } = useSelector((state: RootState) => state.getIdeas);
 
   const filteredIdeas =
@@ -20,7 +20,7 @@ export default function IdeasDeck({ ideas }: Properties) {
           {filteredIdeas?.map((idea) => {
             return (
               <Col className="ideas-col" key={idea.id}>
-                <IdeaCard idea={idea} />
+                <IdeaCard idea={idea} deleteHandler={handleDelete} />
               </Col>
             );
           })}

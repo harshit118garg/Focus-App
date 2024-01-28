@@ -11,5 +11,9 @@ export const addNewIdea = async (idea: Idea) => {
 };
 
 export const updateIdea = async (idea: Idea) => {
-  return axios.patch(`${BASE_URL}/ideasnew`, idea);
+  return axios.patch(`${BASE_URL}/ideasnew/${idea.id}`, idea);
+};
+
+export const deleteIdea = async (idea: Idea) => {
+  return axios.delete(`${BASE_URL}/ideasnew/${idea.id}`);
 };

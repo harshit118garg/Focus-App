@@ -2,6 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Idea, Status } from "../global/definations/types";
 import {
   AddNewIdeaAsync,
+  DeleteIdeaAsync,
   FetchIdeasAsync,
   UpdateIdeaAsync,
 } from "./api/controllers";
@@ -51,24 +52,44 @@ export const IdeasSlice = createSlice({
       .addCase(AddNewIdeaAsync.pending, (state) => {
         state.loading = true;
       })
-      .addCase(AddNewIdeaAsync.fulfilled, (state, action) => {
-        state.loading = false;
-        state.ideasResponse.ideasData = action.payload;
-        state.error = false;
-      })
+      .addCase(
+        AddNewIdeaAsync.fulfilled,
+        (state, action: PayloadAction<Idea[]>) => {
+          state.loading = false;
+          state.ideasResponse.ideasData = action.payload;
+          state.error = false;
+        }
+      )
       .addCase(AddNewIdeaAsync.rejected, (state) => {
         state.error = false;
       })
       .addCase(UpdateIdeaAsync.pending, (state) => {
         state.loading = true;
       })
-      .addCase(UpdateIdeaAsync.fulfilled, (state, action) => {
-        state.loading = false;
-        state.ideasResponse.ideasData = action.payload;
-        state.error = false;
-      })
+      .addCase(
+        UpdateIdeaAsync.fulfilled,
+        (state, action: PayloadAction<Idea[]>) => {
+          state.loading = false;
+          state.ideasResponse.ideasData = action.payload;
+          state.error = false;
+        }
+      )
       .addCase(UpdateIdeaAsync.rejected, (state) => {
         state.error = false;
+      })
+      .addCase(DeleteIdeaAsync.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(
+        DeleteIdeaAsync.fulfilled,
+        (state, action: PayloadAction<Idea[]>) => {
+          state.loading = false;
+          state.ideasResponse.ideasData = action.payload;
+          state.error = false;
+        }
+      )
+      .addCase(DeleteIdeaAsync.rejected, (state) => {
+        state.error = true;
       });
   },
 });
