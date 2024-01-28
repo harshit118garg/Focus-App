@@ -25,7 +25,7 @@ export default function FormDeck({
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Idea Status</Form.Label>
-            <DropDown />
+            <DropDown status={ideaProp.status} />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Idea Description</Form.Label>

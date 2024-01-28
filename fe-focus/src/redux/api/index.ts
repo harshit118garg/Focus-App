@@ -7,6 +7,5 @@ export const fetchIdeas = async () => {
 };
 
 export const addNewIdea = async (idea: Idea) => {
-  console.log("added new idea", idea);
   return axios.post(`${BASE_URL}/ideasnew`, idea);
 };

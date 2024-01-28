@@ -6,8 +6,9 @@ import { Status } from "../../global/definations/types";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { actions } from "../../redux/slice";
+import { Properties } from "./definations/types";
 
-export default function DropDown() {
+export default function DropDown({ status }: Properties) {
   const dispatch = useDispatch<AppDispatch>();
 
   const OptionWithDeleteButton: React.FC<{
@@ -23,7 +24,7 @@ export default function DropDown() {
     </div>
   );
 
-  const [selectedStatus, setSelectedStatus] = useState<Status | null>(null);
+  const [selectedStatus, setSelectedStatus] = useState<Status | null>(status);
   const handleSelect = (status: Status | null) => {
     if (status !== null) {
       setSelectedStatus(status);
