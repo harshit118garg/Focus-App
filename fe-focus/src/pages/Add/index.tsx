@@ -4,7 +4,8 @@ import FormDeck from "../../components/FormDeck";
 import { Idea } from "../../global/definations/types";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/store";
-import { AddNewIdeaAsync, actions } from "../../redux/slice";
+import { actions } from "../../redux/slice";
+import { AddNewIdeaAsync } from "../../redux/api/controllers";
 
 export default function AddNew() {
   const dispatch = useDispatch<AppDispatch>();

@@ -164,6 +164,16 @@
         "variant": "success"
       },
       "id": 1706371693747
+    },
+    {
+      "title": "new idea",
+      "description": "test new idea, not started yetr, needs to bew owroked on",
+      "status": {
+        "label": "Not Started",
+        "value": "Not Started",
+        "variant": "secondary"
+      },
+      "id": 1706424531713
     }
   ]
 }

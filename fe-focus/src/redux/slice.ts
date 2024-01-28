@@ -1,7 +1,11 @@
-import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { addNewIdea, fetchIdeas } from "./api";
-import { State } from "./definations/types";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Idea, Status } from "../global/definations/types";
+import {
+  AddNewIdeaAsync,
+  FetchIdeasAsync,
+  UpdateIdeaAsync,
+} from "./api/controllers";
+import { State } from "./definations/types";
 
 const initialState: State = {
   ideasResponse: {
@@ -13,35 +17,6 @@ const initialState: State = {
   selectedStatus: null,
   newIdea: null,
 };
-
-export const FetchIdeasAsync = createAsyncThunk(
-  "fetch/ideas",
-  async (_, { rejectWithValue }) => {
-    try {
-      console.log(`🚀: Async Thunk for fetching ideas`);
-      const { data } = await fetchIdeas();
-      return data;
-    } catch (error: any) {
-      console.log(`❌: Error in Async Thunk for fetching ideas`);
-      return rejectWithValue(error.response.data);
-    }
-  }
-);
-
-export const AddNewIdeaAsync = createAsyncThunk(
-  "add/idea",
-  async (idea: Idea, { rejectWithValue }) => {
-    try {
-      console.log(`🚀: Async Thunk for adding new idea`);
-      await addNewIdea(idea);
-      const { data } = await fetchIdeas();
-      return data;
-    } catch (error: any) {
-      console.log(`❌: Error in Async Thunk for adding new idea`);
-      return rejectWithValue(error.response.data);
-    }
-  }
-);
 
 export const IdeasSlice = createSlice({
   name: "ideas",
@@ -82,6 +57,17 @@ export const IdeasSlice = createSlice({
         state.error = false;
       })
       .addCase(AddNewIdeaAsync.rejected, (state) => {
+        state.error = false;
+      })
+      .addCase(UpdateIdeaAsync.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(UpdateIdeaAsync.fulfilled, (state, action) => {
+        state.loading = false;
+        state.ideasResponse.ideasData = action.payload;
+        state.error = false;
+      })
+      .addCase(UpdateIdeaAsync.rejected, (state) => {
         state.error = false;
       });
   },

@@ -3,8 +3,9 @@ import IdeasDeck from "../../components/IdeasDeck";
 import StatusDeck from "../../components/Status";
 import { AppDispatch, RootState } from "../../redux/store";
 import { useEffect } from "react";
-import { FetchIdeasAsync, actions } from "../../redux/slice";
+import { actions } from "../../redux/slice";
 import { Status } from "../../global/definations/types";
+import { FetchIdeasAsync } from "../../redux/api/controllers";
 
 export default function HomePage() {
   const dispatch = useDispatch<AppDispatch>();
